@@ -1,0 +1,22 @@
+module alt(
+input[4:0]opcode,
+input[18:0]reg1,
+input[18:0]reg2,
+output[18:0]sam
+);
+always@(*)
+begin
+5'b00000:sam=reg1+reg2;
+5'b00001:sam=reg1=reg2;
+5'b00010:sam=reg1*reg2;
+5'b00011:sam=reg1/reg2;
+5'b00100:sam=reg1+1;
+5'b00101:sam=reg1-1;
+5'b00110:sam=reg1&reg2;
+5'b00111:sam=reg1|reg2;
+5'b01000:sam=reg1^reg2;
+5'b01001:sam=~reg1;
+default:sam=19'b0;
+endcase
+end
+endmodule
